@@ -260,10 +260,10 @@ static bool setup_alg_mode_and_iv_and_padding(ESYS_CONTEXT *ectx, TPM2B_IV *iv) 
             return tool_rc_general_error;
         }
 
-        if (file_size != iv->size) {
+        /*if (file_size != iv->size) {
             LOG_ERR("Iv should be 16 bytes, got %lu", file_size);
             return tool_rc_general_error;
-        }
+        }*/
 
         result = files_load_bytes_from_path(ctx.iv.in, iv->buffer, &iv->size);
         if (!result) {
