@@ -273,11 +273,11 @@ int tpm2_tool_onrun(TSS2_SYS_CONTEXT *sapi_context, tpm2_option_flags flags) {
             goto out;
         }
 
-        if (file_size != iv.size) {
+/*        if (file_size != iv.size) {
             LOG_ERR("Iv should be 16 bytes, got %lu", file_size);
             goto out;
         }
-
+*/
         result = files_load_bytes_from_path(ctx.iv.in, iv.buffer, &iv.size);
         if (!result) {
             goto out;
